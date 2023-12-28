@@ -5,7 +5,7 @@ import { TokenBalance, TokenBalanceType, TokenMetadataResponse } from "alchemy-s
 import InfiniteScroll from "react-infinite-scroller";
 import { Spinner } from "react-bootstrap";
 import { getAlchemyClient, NetworkUrls } from "@/util/clientConfig";
-import ERC20Token from "./ERC20Token";
+import ERC721Token from "./ERC721Token";
 import { getTokenMetadataBatch } from "@/util/batchTokenMetadata";
 
 export interface IAssetsListProps {
@@ -61,7 +61,7 @@ export default function AssetsList({ chain, address }: IAssetsListProps) {
           {items.length > 0 && items.map(
             (item, index) => (
               <li key={index}>
-                <ERC20Token symbol={item.symbol!} balance={item.tokenBalance!} logo={item.logo!} decimals={item.decimals!} />
+                <ERC721Token symbol={item.symbol!} balance={item.tokenBalance!} logo={item.logo!} decimals={item.decimals!} />
                 <hr />
               </li>
             )

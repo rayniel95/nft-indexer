@@ -14,7 +14,7 @@ export default function Home() {
       <Container>
         <Row className="mt-3">
           <Col>
-            <h1 className="text-center">Erc20 Indexer</h1>
+            <h1 className="text-center">NFT Indexer</h1>
             <hr />
           </Col>
           <Col sm={2}> 
