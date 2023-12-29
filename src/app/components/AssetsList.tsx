@@ -12,7 +12,7 @@ export interface IAssetsListProps {
   address: string;
 }
 
-
+ 
 export default function AssetsList({ chain, address }: IAssetsListProps) {
   const [items, setItems] = useState<OwnedNft[]>([]);
   const [pageKey, setPageKey] = useState<string | undefined>(undefined)
