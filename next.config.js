@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+    output: 'export',
+    basePath: '/nft-indexer',
+    assetPrefix: '/nft-indexer/',
+}
 
 module.exports = nextConfig
