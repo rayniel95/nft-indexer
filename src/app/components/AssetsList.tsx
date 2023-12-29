@@ -56,7 +56,7 @@ export default function AssetsList({ chain, address }: IAssetsListProps) {
           {items.length > 0 && items.map(
             (item, index) => (
               <li key={index}>
-                <ERC721Token symbol={item.name!} balance={item.balance!} logo={item.image.pngUrl!} decimals={item.decimals!} />
+                <ERC721Token symbol={item.name!} balance={item.balance!} logo={item.image.pngUrl!} />
                 <hr />
               </li>
             )

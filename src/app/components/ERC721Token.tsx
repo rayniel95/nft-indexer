@@ -9,17 +9,15 @@ export interface IERC721TokenProps {
     symbol: string;
     balance: string;
     logo: string;
-    decimals: number;
 }
 
-export default function ERC721Token({ symbol, balance, logo, decimals }: IERC721TokenProps) {
-    const decimalBalance = Utils.formatUnits(balance, decimals);
+export default function ERC721Token({ symbol, balance, logo }: IERC721TokenProps) {
     return (
         <Container>
             <Row>
                 <Col>
                     <p>Symbol: {symbol}</p>
-                    <p>Balance: {decimalBalance}</p>
+                    <p>Balance: {balance}</p>
                 </Col>
                 <Col>
                     <Image src={logo} />
