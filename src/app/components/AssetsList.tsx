@@ -12,7 +12,6 @@ export interface IAssetsListProps {
   address: string;
 }
 
-type TokenResponse = TokenMetadataResponse & TokenBalance
 
 export default function AssetsList({ chain, address }: IAssetsListProps) {
   const [items, setItems] = useState<OwnedNft[]>([]);
@@ -28,12 +27,6 @@ export default function AssetsList({ chain, address }: IAssetsListProps) {
         omitMetadata: false,
         pageKey
       });
-      // const tokenMetadata = await getTokenMetadataBatch(
-      //   data.tokenBalances.map((item) => item.contractAddress),
-      //   NetworkUrls[alchemy.config.network],
-      //   alchemy.config.apiKey
-      // )
-      // console.log(items)
       setItems(data.ownedNfts)
       setPageKey(data.pageKey)
     } catch (error) {
@@ -56,7 +49,7 @@ export default function AssetsList({ chain, address }: IAssetsListProps) {
           {items.length > 0 && items.map(
             (item, index) => (
               <li key={index}>
-                <ERC721Token symbol={item.name!} balance={item.balance!} logo={item.image.pngUrl!} />
+                <ERC721Token {...item} />
                 <hr />
               </li>
             )
